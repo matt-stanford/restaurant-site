@@ -1,0 +1,31 @@
+{% load static %}
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <input type="checkbox" class="toggler">
+            <div class="hamburger"><div></div></div>
+
+            <div class="nav-logo">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'img/815_logo.png' %}" alt="">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <ul class="list-group">
+                    <li class="list-item">
+                        <a href="#" class="item-link">Home</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="item-link">About</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="item-link">Menu</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="item-link">Book a table</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
