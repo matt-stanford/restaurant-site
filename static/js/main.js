@@ -2,7 +2,7 @@ const nav = document.querySelector('nav');
 const sectionOne = document.querySelector('.showcase');
 
 const sectionOneOptions = {
-    rootMargin: "-800px 0px 0px 0px"
+    rootMargin: "-900px 0px 0px 0px"
   };
   
   const sectionOneObserver = new IntersectionObserver(function(
