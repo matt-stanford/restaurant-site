@@ -70,6 +70,10 @@ a {
     -moz-transition: all .2s ease-out;
 }
 
+.btn-block {
+    width: 100%;
+}
+
 .btn-primary {
     border: 2px solid #333;
 }
@@ -86,6 +90,45 @@ a {
     max-width: 1160px;
     padding: 0 15px;
     margin: 0 auto;
+}
+
+.contact-form {
+    padding: 50px 0;
+    text-align: center;
+    background: #f0f0f0;
+}
+
+.contact-form form {
+    margin-top: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    display: block;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    margin: 0 auto 10px auto;
+    font-family: 'Raleway','Helvetica Neue',Helvetica,sans-serif;
+    outline: none;
+    background: #fafafa;
+    border: 1px solid #ccc;
+    color: #333;
+    transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+}
+
+textarea {
+    resize: none;
+}
+
+footer {
+    width: inherit;
+    display: block;
+    padding: 30px 0;
+    text-align: left;
+    background: #e6e6e6;
 }
 
 .showcase {
