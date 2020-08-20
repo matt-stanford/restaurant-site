@@ -5,27 +5,31 @@
 {% block content %}
     <section class="section-one booking">
         <div class="container">
-            <div class="calendar">
-                <div class="month">
-                    <i class="fas fa-angle-left prev"></i>
-                    <div class="date">
-                        <h4></h4>
-                        <p></p>
+            <div class="booking-modal">
+                <div class="calendar">
+                    <div class="month">
+                        <i class="fas fa-angle-left prev"></i>
+                        <div class="date">
+                            <h4></h4>
+                            <p></p>
+                        </div>
+                        <i class="fas fa-angle-right next"></i>
                     </div>
-                    <i class="fas fa-angle-right next"></i>
-                </div>
-                <div class="weekdays">
-                    <div>Sun</div>
-                    <div>Mon</div>
-                    <div>Tue</div>
-                    <div>Wed</div>
-                    <div>Thu</div>
-                    <div>Fri</div>
-                    <div>Sat</div>
-                </div>
-                <div class="days">
+                    <div class="weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="days">
+                    </div>
                 </div>
             </div>
+            <button class="booking-modal-open" style="margin-top: 200px;">Open</button>
+            
         </div>
     </section>
 {% endblock %}

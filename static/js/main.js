@@ -63,30 +63,53 @@ const renderCalendar = () => {
   }
 
   for(let i = 1; i <= lastDay; i++) {
-    if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()) {
-      days += `<div class="today">${i}</div>`;
+    if (i < new Date().getDate() && date.getMonth() === new Date().getMonth()) {
+      days += `<div class="prev-date">${i}</div>`
+    } else if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()) {
+      days += `<div class="select-date today">${i}</div>`;
     } else {
-      days += `<div>${i}</div>`;
+      days += `<div class="select-date">${i}</div>`;
     }
   }
 
   for(let j = 1; j <= nextDays; j++) {
-    days += `<div class="next-date">${j}</div>`;
+    days += `<div class="select-date next-date">${j}</div>`;
     monthDays.innerHTML = days;
   }
+
+  const bookingModalOpen = document.querySelector('.booking-modal-open');
+  const bookingModal = document.querySelector('.booking-modal');
+
+  bookingModalOpen.addEventListener('click', () => {
+    bookingModal.style.display = 'block';
+  });
+  
+  const daysOfMonth = Array.from(document.querySelectorAll('.select-date'));
+  console.log(daysOfMonth)
+  
+  daysOfMonth.forEach(day => {
+    day.addEventListener('click', () => {
+      daysOfMonth.forEach(d => {
+        d.classList.remove('selected-date')
+      });
+      day.classList.add('selected-date');
+      bookingModal.style.display = 'none';
+    });
+  });
+
 }
 
 
 document.querySelector('.prev').addEventListener('click', () => {
-  console.log('click')
   date.setMonth(date.getMonth() - 1);
   renderCalendar();
 });
 
 document.querySelector('.next').addEventListener('click', () => {
-  console.log('click')
   date.setMonth(date.getMonth() + 1);
   renderCalendar();
 });
 
 renderCalendar()
+
+
