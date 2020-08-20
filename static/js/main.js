@@ -56,6 +56,14 @@ const renderCalendar = () => {
   document.querySelector('.date h4').innerHTML = months[date.getMonth()];
   document.querySelector('.date p').innerHTML = new Date().toDateString();
 
+  const prevArrow = document.querySelector('.prev');
+
+  if (date.getMonth() === new Date().getMonth()) {
+    prevArrow.style.visibility = 'hidden';
+  } else {
+    prevArrow.style.visibility = 'visible';
+  }
+
   let days = ""
 
   for(let x = firstDayIndex; x > 0; x--) {
@@ -98,7 +106,6 @@ const renderCalendar = () => {
   });
 
 }
-
 
 document.querySelector('.prev').addEventListener('click', () => {
   date.setMonth(date.getMonth() - 1);
