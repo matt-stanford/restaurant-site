@@ -1,0 +1,72 @@
+.booking {
+    background: var(--tertiary-color);
+}
+
+.calendar {
+    width: 450px;
+    height: 520px;
+    background: #f0f0f0;
+    margin-top: 100px;
+}
+
+.month {
+    width: 100%;
+    height: 120px;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.month i {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.weekdays {
+    width: 100%;
+    height: 50px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+}
+
+.weekdays div {
+    width: calc(442px/7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.days div {
+    margin: 3px;
+    width: calc(398px/7);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.days div:hover:not(.today),
+.selected-date {
+    background: var(--secondary-color);
+    cursor: pointer;
+}
+
+.prev-date,
+.next-date {
+    opacity: .5;
+}
+
+.today {
+    background: var(--primary-color);
+}

@@ -3,6 +3,7 @@
 :root {
     --primary-color: #6dccaa;
     --secondary-color: #ffce4e;
+    --tertiary-color: #ebcd9b;
     --font-color: #404040;
 }
 
@@ -86,6 +87,8 @@ a {
 
 .container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     max-width: 1160px;
     padding: 0 15px;
@@ -131,9 +134,12 @@ footer {
     background: #e6e6e6;
 }
 
+.section-one {
+    height: 100vh;
+}
+
 .showcase {
     background: var(--primary-color);
-    height: 100vh;
 }
 
 .section-light {
@@ -143,12 +149,10 @@ footer {
 
 .p-section-2 {
     position: relative;
-    /* background-image: url('../img/eetcafe.jpg'); */
     background: var(--secondary-color);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
-    /* min-height: 500px; */
 }
 
 .parallax-window {

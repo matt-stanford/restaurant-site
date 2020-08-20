@@ -9,3 +9,6 @@ def index(request):
 
 def about(request):
     return render(request, 'pages/about.html')
+
+def booking(request):
+    return render(request, 'pages/booking.html')
