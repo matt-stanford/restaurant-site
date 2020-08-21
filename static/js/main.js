@@ -102,6 +102,8 @@ const renderCalendar = () => {
       });
       day.classList.add('selected-date');
       bookingModal.style.display = 'none';
+      const bookingDate = `${date.getFullYear()}-${("0" + (date.getMonth()+1)).slice(-2)}-${("0" + day.textContent).slice(-2)}`;
+      bookingModalOpen.value = bookingDate;
     });
   });
 

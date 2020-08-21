@@ -5,6 +5,7 @@
 {% block content %}
     <section class="section-one booking">
         <div class="container">
+            <!-- modal -->
             <div class="booking-modal">
                 <div class="calendar">
                     <div class="month">
@@ -28,7 +29,14 @@
                     </div>
                 </div>
             </div>
-            <button class="booking-modal-open" style="margin-top: 200px;">Open</button>
+
+            <div class="form-wrapper">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-submit">Find a table</button>
+                </form>
+            </div>
             
         </div>
     </section>

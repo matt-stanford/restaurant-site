@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import ContactForm
+from .forms import ContactForm, EnquiryForm
 
 def index(request):
     form = ContactForm(request.POST or None)
@@ -11,4 +11,7 @@ def about(request):
     return render(request, 'pages/about.html')
 
 def booking(request):
-    return render(request, 'pages/booking.html')
+    form = EnquiryForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    return render(request, 'pages/booking.html', {'form': form})

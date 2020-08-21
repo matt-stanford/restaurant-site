@@ -75,14 +75,21 @@ a {
     width: 100%;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-submit {
     border: 2px solid #333;
 }
 
 .btn-primary:hover {
     color: #fff;
-    background: #f7c040;
-    border-color: #f7c040;
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-submit:hover {
+    color: #fff;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .container {

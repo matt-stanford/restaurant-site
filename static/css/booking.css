@@ -11,8 +11,18 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    background: rgba(0,0,0,.75);
     animation-name: modalopen;
     animation-duration: 0.6s;
+}
+
+@keyframes modalopen {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+
+.booking-modal-open {
+    cursor: pointer;
 }
 
 .calendar {
@@ -88,4 +98,9 @@
     background: var(--secondary-color);
     cursor: pointer;
     opacity: 1;
+}
+
+.form-wrapper {
+    display: flex;
+    margin-top: 200px;
 }
