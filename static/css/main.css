@@ -150,7 +150,7 @@ footer {
 }
 
 .section-light {
-    background: #f3f3f3;
+    background: #fff;
     padding: 100px 0;
 }
 
@@ -186,6 +186,15 @@ footer {
 
 .pr-2 {
     padding-right: 2rem;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 0;
 }
 
 @media (min-width: 768px) {

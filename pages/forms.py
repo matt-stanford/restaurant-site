@@ -10,6 +10,8 @@ class ContactForm(forms.Form):
 
 class EnquiryForm(forms.ModelForm):
     date = forms.DateField(widget=forms.DateInput(attrs={'class': 'booking-modal-open'}), initial=datetime.date.today)
+    # time = forms.CharField(label='')
+    # guests = forms.CharField(initial='2 guests', label='')
     
     class Meta:
         model = Enquiry

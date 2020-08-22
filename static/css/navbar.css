@@ -34,6 +34,7 @@ nav .list-item > a {
     color: #fff;
     font-weight: 500;
     transition: all .2s ease-out;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 nav .list-item > a:hover {
