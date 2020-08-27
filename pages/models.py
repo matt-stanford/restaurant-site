@@ -5,8 +5,8 @@ class Enquiry(models.Model):
     GUEST_CHOICES = [(f'{i} guests', f'{i} guests') for i in range(2, 21)]
     
     date = models.DateField()
-    time = models.CharField(max_length=8, choices=TIME_CHOICES)
-    guests = models.CharField(max_length=12, choices=GUEST_CHOICES)
+    time = models.CharField(max_length=8, choices=TIME_CHOICES, default='7:00 PM')
+    guests = models.CharField(max_length=12, choices=GUEST_CHOICES, default='2 guests')
 
     def __str__(self):
         return f'{self.date} - {self.time} - {self.guests}'

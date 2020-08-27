@@ -7,7 +7,7 @@
 
     </section>
     
-    <div class="section-light">
+    <!-- <div class="section-light">
         <div class="container">
             <div class="col-6 pr-2">
                 <img src="{% static 'img/section2-image.png' %}" alt="">
@@ -19,13 +19,7 @@
                 <p>Please make us aware of any allergies or specific dietary requirements at the time of booking.</p>
             </div>
         </div>
-    </div>
-
-    <div class="p-section-2 parallax-window" data-parallax="scroll" data-image-src="{% static 'img/restaurant.png' %}">
-        <div class="container">
-            
-        </div>
-    </div>
+    </div> -->
 
     <div class="section-light">
         <div class="container">
@@ -57,7 +51,7 @@
             <div class="form-wrapper">
                 <form method="post" class="booking-form">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    {{ form }}
                     <button class="btn btn-submit btn-block">Find a table</button>
                 </form>
             </div>

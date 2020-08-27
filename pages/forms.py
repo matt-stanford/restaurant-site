@@ -9,7 +9,7 @@ class ContactForm(forms.Form):
     message = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Your message'}), label='')
 
 class EnquiryForm(forms.ModelForm):
-    date = forms.DateField(widget=forms.DateInput(attrs={'class': 'booking-modal-open'}), initial=datetime.date.today)
+    date = forms.DateField(widget=forms.DateInput(attrs={'class': 'booking-modal-open'}), initial=datetime.date.today, label='')
     # time = forms.CharField(label='')
     # guests = forms.CharField(initial='2 guests', label='')
     

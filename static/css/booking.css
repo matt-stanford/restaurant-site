@@ -97,7 +97,14 @@
 }
 
 .form-wrapper {
-    width: 30%;
+    width: 100%;
+}
+
+.booking-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .booking-form label {
@@ -114,7 +121,7 @@
     display: block;
     padding: 8px 10px;
     box-sizing: border-box;
-    margin: 0 auto 10px auto;
+    /* margin: 0 auto 10px auto; */
     font-family: 'Raleway','Helvetica Neue',Helvetica,sans-serif;
     outline: none;
     background: #fafafa;
