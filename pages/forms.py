@@ -1,6 +1,6 @@
 from django import forms
 import datetime
-from .models import Enquiry
+from .models import Enquiry, Customer
 
 class ContactForm(forms.Form):
     name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'placeholder': 'Your name'}), label='')
@@ -10,9 +10,13 @@ class ContactForm(forms.Form):
 
 class EnquiryForm(forms.ModelForm):
     date = forms.DateField(widget=forms.DateInput(attrs={'class': 'booking-modal-open'}), initial=datetime.date.today, label='')
-    # time = forms.CharField(label='')
-    # guests = forms.CharField(initial='2 guests', label='')
     
     class Meta:
         model = Enquiry
+        fields = '__all__'
+
+class CustomerForm(forms.ModelForm):
+
+    class Meta:
+        model = Customer
         fields = '__all__'
