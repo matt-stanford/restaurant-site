@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="p-section-2 parallax-window" data-parallax="scroll" data-image-src="{% static 'img/restaurant.png' %}">
+        <div class="container">
+            
+        </div>
+    </div>
+
+    <div class="section-one section-light">
+        <div class="container">
+            <div class="col-6 pr-2 text-right">
+                <h2>Your details</h2>
+                <hr>
+                <p>To confirm your reservation for {{ guests }} at {{ time }} on {{ date }}, please enter your personal details on the right.</p>
+            </div>
+            <div class="col-6 pl-2">
+                <form method="post" class="guest-info-form">
+                    {% csrf_token %}
+                    {{ form }}
+                    <button class="btn btn-submit btn-block">Confirm Reservation</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

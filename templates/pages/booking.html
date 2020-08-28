@@ -3,26 +3,15 @@
 {% load static %}
 
 {% block content %}
-    <section class="section-one booking">
-
-    </section>
-    
-    <!-- <div class="section-light">
+    <div class="p-section-2 parallax-window" data-parallax="scroll" data-image-src="{% static 'img/restaurant.png' %}">
         <div class="container">
-            <div class="col-6 pr-2">
-                <img src="{% static 'img/section2-image.png' %}" alt="">
-            </div>
-            <div class="col-6 pl-2">
-                <h2>Book a table</h2>
-                <hr>
-                <p class="mb-2">We are now taking table reservations online for dining from August 1st onwards in line with social distancing guidance, for parties of up to six people. If your party is larger than six, please call or e-mail us.</p>
-                <p>Please make us aware of any allergies or specific dietary requirements at the time of booking.</p>
-            </div>
+            
         </div>
-    </div> -->
+    </div>
 
-    <div class="section-light">
+    <div class="section-one section-light">
         <div class="container">
+
             <!-- modal -->
             <div class="booking-modal">
                 <div class="calendar">
@@ -47,6 +36,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- booking form -->
 
             <div class="form-wrapper">
                 <form method="post" class="booking-form">

@@ -16,6 +16,10 @@ class EnquiryForm(forms.ModelForm):
         fields = '__all__'
 
 class CustomerForm(forms.ModelForm):
+    first_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Your first name'}), label='')
+    last_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Your last name'}), label='')
+    email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'Your email'}), label='')
+    phone = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Your phone'}), label='')
 
     class Meta:
         model = Customer

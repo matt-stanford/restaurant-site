@@ -48,7 +48,10 @@ class Customer(models.Model):
     objects = models.Manager()
 
 class Reservation(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
     date = models.DateField()
     time = models.TimeField()
     guests = models.PositiveIntegerField()
