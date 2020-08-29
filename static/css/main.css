@@ -69,6 +69,7 @@ a {
     text-align: center;
     line-height: normal;
     color: inherit;
+    outline: none;
     cursor: pointer;
     transition: all .2s ease-out;
     -webkit-transition: all .2s ease-out;
@@ -86,6 +87,7 @@ a {
 .btn-primary,
 .btn-submit {
     border: 2px solid #333;
+    background: transparent;
 }
 
 .btn-primary:hover {

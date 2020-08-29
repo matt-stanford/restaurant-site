@@ -38,7 +38,7 @@ nav .list-item > a {
 }
 
 nav .list-item > a:hover {
-    color: #333;
+    color: var(--secondary-color);
 }
 
 .nav-scrolled {

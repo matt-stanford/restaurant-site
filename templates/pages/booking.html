@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-    <div class="p-section-2 parallax-window" data-parallax="scroll" data-image-src="{% static 'img/restaurant.png' %}">
+    <div class="p-section-2 parallax-window" data-parallax="scroll" data-image-src="{% static 'img/reservation.png' %}">
         <div class="container">
             
         </div>
@@ -43,9 +43,22 @@
                 <form method="post" class="booking-form">
                     {% csrf_token %}
                     {{ form }}
-                    <button class="btn btn-submit btn-form">Find a table</button>
+                    <button class="btn btn-primary btn-form">Find a table</button>
                 </form>
             </div>
+        </div>
+        <div class="container">
+            <div class="col-6 pr-2 text-right">
+                <h2>Private dining</h2>
+                <hr>
+                <p class="mb-2">“The Meazzanine Room” features a temperature-controlled wine cellar, displays of more wine and a private atmosphere. A semi-private room, “Barbaresco,” is available for meetings, birthdays and other occasions.</p>
+                <p class="mb-2">“The Meazzanine Room” seats up to 50 guests. Please contact us for further information.</p>
+                <a href="" class="btn btn-primary">Contact us</a>
+            </div>
+            <div class="col-6 pl-2">
+                <img src="{% static 'img/private-dining.png' %}" alt="">
+            </div>
+        </div>
             
         </div>
     </div>
