@@ -13,9 +13,9 @@ def about(request):
 
 def menu(request):
     starters = MenuItem.objects.filter(course='Starter')
-    mains = MenuItem.objects.filter(course='Mains')
-    sides = MenuItem.objects.filter(course='Sides')
-    desserts = MenuItem.objects.filter(course='Desserts')
+    mains = MenuItem.objects.filter(course='Main')
+    sides = MenuItem.objects.filter(course='Side')
+    desserts = MenuItem.objects.filter(course='Dessert')
 
     context = {
         'starters': starters,

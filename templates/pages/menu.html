@@ -10,11 +10,70 @@
     </div>
 
     <div class="section-one section-light">
-        <div class="container">
-            <div class="starters">
-                <h4>To start</h4>
+        <div class="container text-top">
+            <div class="col-6 pr-2">
+                <h2>To start</h2>
+                <hr>
                 {% for starter in starters %}
-                    <p>{{ starter.name }}</p>
+                    <div class="menu-item">
+                        <p class="menu-item-name">{{ starter.name }}</p>
+                        <p class="menu-item-tags">
+                            {% for tag in starter.dietary_tags.all %}
+                                {{ tag }}
+                            {% endfor %}
+                        </p>
+                        <p class="menu-item-price">£{{ starter.price }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="col-6 pl-2">
+                <h2>To follow</h2>
+                <hr>
+                {% for main in mains %}
+                    <div class="menu-item">
+                        <p class="menu-item-name">{{ main.name }}</p>
+                        <p class="menu-item-tags">
+                            {% for tag in main.dietary_tags.all %}
+                                {{ tag }}
+                            {% endfor %}
+                        </p>
+                        <p class="menu-item-price">£{{ main.price }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="container mt-2 text-top">
+            <div class="col-6 pr-2">
+                <h2>Sides</h2>
+                <hr>
+                {% for side in sides %}
+                    <div class="menu-item">
+                        <p class="menu-item-name">{{ side.name }}</p>
+                        <p class="menu-item-tags">
+                            {% for tag in side.dietary_tags.all %}
+                                {{ tag }}
+                            {% endfor %}
+                        </p>
+                        <p class="menu-item-price">£{{ side.price }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="col-6 pl-2">
+                <h2>To finish</h2>
+                <hr>
+                {% for dessert in desserts %}
+                    <div class="menu-item">
+                        <p class="menu-item-name">{{ dessert.name }}</p>
+                        <p class="menu-item-tags">
+                            {% for tag in dessert.dietary_tags.all %}
+                                {{ tag }}
+                            {% endfor %}
+                        </p>
+                        <p class="menu-item-price">£{{ dessert.price }}</p>
+                    </div>
                 {% endfor %}
             </div>
         </div>
