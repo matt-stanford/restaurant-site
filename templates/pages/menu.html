@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="p-section-2 parallax-window" data-parallax="scroll" data-image-src="{% static 'img/menu.png' %}">
+        <div class="container">
+            
+        </div>
+    </div>
+
+    <div class="section-one section-light">
+        <div class="container">
+            <div class="starters">
+                <h4>To start</h4>
+                {% for starter in starters %}
+                    <p>{{ starter.name }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

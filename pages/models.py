@@ -57,3 +57,29 @@ class Reservation(models.Model):
     guests = models.PositiveIntegerField()
 
     objects = models.Manager()
+
+class Dietary(models.Model):
+    tags = models.CharField(max_length=2)
+
+    def __str__(self):
+        return self.tags
+
+    objects = models.Manager()
+
+class MenuItem(models.Model):
+    COURSE_CHOICES = [
+        ('Starter', 'Starter'),
+        ('Main', 'Main'),
+        ('Side', 'Side'),
+        ('Dessert', 'Dessert')
+    ]
+
+    name = models.CharField(max_length=255)
+    course = models.CharField(max_length=50, choices=COURSE_CHOICES)
+    price = models.DecimalField(max_digits=4, decimal_places=2)
+    dietary_tags = models.ManyToManyField(Dietary, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    objects = models.Manager()

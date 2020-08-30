@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import ContactForm, EnquiryForm, CustomerForm
-from .models import Reservation, Customer
+from .models import Reservation, Customer, MenuItem
 
 def index(request):
     form = ContactForm(request.POST or None)
@@ -10,6 +10,21 @@ def index(request):
 
 def about(request):
     return render(request, 'pages/about.html')
+
+def menu(request):
+    starters = MenuItem.objects.filter(course='Starter')
+    mains = MenuItem.objects.filter(course='Mains')
+    sides = MenuItem.objects.filter(course='Sides')
+    desserts = MenuItem.objects.filter(course='Desserts')
+
+    context = {
+        'starters': starters,
+        'mains': mains,
+        'sides': sides,
+        'desserts': desserts
+    }
+
+    return render(request, 'pages/menu.html', context)
 
 def booking(request):
     form = EnquiryForm(request.POST or None)
