@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-    <div class="p-section-2 parallax-window" data-parallax="scroll" data-image-src="{% static 'img/restaurant.png' %}">
+    <div class="p-section-2 parallax-window" data-parallax="scroll" data-image-src="{% static 'img/reservation2.png' %}">
         <div class="container">
             
         </div>
@@ -20,7 +20,7 @@
                 <form method="post" class="guest-info-form">
                     {% csrf_token %}
                     {{ form }}
-                    <button class="btn btn-submit btn-block">Confirm Reservation</button>
+                    <button class="btn btn-primary btn-block">Confirm Reservation</button>
                 </form>
             </div>
         </div>

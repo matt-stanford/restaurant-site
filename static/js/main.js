@@ -1,25 +1,13 @@
-const nav = document.querySelector('nav');
-const sectionOne = document.querySelector('.section-one');
+const nav = document.querySelector('.navbar');
 
-const sectionOneOptions = {
-    rootMargin: "-900px 0px 0px 0px"
-  };
-  
-const sectionOneObserver = new IntersectionObserver(function(
-  entries,
-  sectionOneObserver
-) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) {
-      nav.classList.add("nav-scrolled");
+window.onscroll = function() {
+  var top = window.scrollY;
+  if (top >= 100) {
+    nav.classList.add("nav-scrolled");
     } else {
       nav.classList.remove("nav-scrolled");
     }
-  });
-},
-sectionOneOptions);
-
-sectionOneObserver.observe(sectionOne);
+}
 
 // calendar
 

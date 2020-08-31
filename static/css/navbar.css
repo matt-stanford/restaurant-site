@@ -5,7 +5,7 @@
     right: 0;
     padding: 30px 0;
     z-index: 4;
-    transition: .2s ease-in;
+    transition: all .5s ease;
 }
 
 nav .container {
@@ -38,7 +38,7 @@ nav .list-item > a {
 }
 
 nav .list-item > a:hover {
-    color: var(--secondary-color);
+    color: #333;
 }
 
 .nav-scrolled {
@@ -47,11 +47,13 @@ nav .list-item > a:hover {
     -webkit-box-shadow: 0 8px 15px rgba(0,0,0,0.1);
     -moz-box-shadow: 0 8px 15px rgba(0,0,0,0.1);
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: all .5s ease;
 }
 
 .nav-scrolled .list-item > a {
     color: #333;
     text-shadow: none;
+    transition: all .5s ease;
 }
 
 .nav-scrolled .list-item > a:hover {

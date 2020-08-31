@@ -3,10 +3,18 @@ from .forms import ContactForm, EnquiryForm, CustomerForm
 from .models import Reservation, Customer, MenuItem
 
 def index(request):
+    sample_menu_one = MenuItem.objects.filter(course='Main')[:3]
+    sample_menu_two = MenuItem.objects.filter(course='Main')[3:6]
     form = ContactForm(request.POST or None)
+    
+    context = {
+        'sample_menu_one': sample_menu_one,
+        'sample_menu_two': sample_menu_two,
+        'form': form
+    }
     if form.is_valid():
         form.save()
-    return render(request, 'pages/index.html', {'form': form})
+    return render(request, 'pages/index.html', context)
 
 def about(request):
     return render(request, 'pages/about.html')

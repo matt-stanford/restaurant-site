@@ -4,7 +4,16 @@
 
 {% block content %}
     <section class="section-one showcase h-100">
-        <div class="container">
+        <div class="showcase-socials">
+            <a href="http://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="http://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#contact">
+                <i class="fas fa-envelope"></i>
+            </a>
         </div>
     </section>
 
@@ -52,47 +61,45 @@
     <div class="section-light">
         <div class="container">
             <div class="col-6 pr-2">
-                <div class="menu-item">
-                    <span>Roast cod, Thai green veloute, broccoli, sea purslane</span>
-                    <span>p</span>
-                </div>
-                <div class="menu-item">
-                    <span>Dahl, Bombay mix, slow cooked duck egg, lime</span>
-                    <span>p v</span>
-                </div>
-                <div class="menu-item">
-                    <span>48 hour pork, hay smoked fillet, carrot, pineapple</span>
-                    <span></span>
-                </div>
+                {% for main in sample_menu_one %}
+                    <div class="menu-item">
+                        <p class="menu-item-name">{{ main.name }}</p>
+                        <p class="menu-item-tags">
+                            {% for tag in main.dietary_tags.all %}
+                                {{ tag }}
+                            {% endfor %}
+                        </p>
+                        <p class="menu-item-price">£{{ main.price }}</p>
+                    </div>
+                {% endfor %}
             </div>
             <div class="col-6 pl-2">
-                <div class="menu-item">
-                    <span>Irish Hereford beef sirloin, braised cheek, truffle, cauliflower</span>
-                    <span></span>
-                </div>
-                <div class="menu-item">
-                    <span>Lamb shoulder, rump, aubergine puree, basil</span>
-                    <span>p</span>
-                </div>
-                <div class="menu-item">
-                    <span>Scorched Cornish mackerel, avocado, heirloom tomato</span>
-                    <span>p</span>
-                </div>
+                {% for main in sample_menu_two %}
+                    <div class="menu-item">
+                        <p class="menu-item-name">{{ main.name }}</p>
+                        <p class="menu-item-tags">
+                            {% for tag in main.dietary_tags.all %}
+                                {{ tag }}
+                            {% endfor %}
+                        </p>
+                        <p class="menu-item-price">£{{ main.price }}</p>
+                    </div>
+                {% endfor %}
             </div>
         </div>
         <div class="container">
-            <a href="" class="btn btn-primary">View the full menu</a>
+            <a href="{% url 'menu' %}" class="btn btn-primary mt-2">View the full menu</a>
         </div>
     </div>
 
-    <div class="contact-form">
+    <div class="contact-form" id="contact">
         <div class="container">
             <div class="col-6 pr-2">
                 <div class="footer-logo">
                     <img src="{% static 'img/815_logo_dark.png' %}" alt="">
                 </div>
                 <div class="footer-socials">
-                    <a href="http:www.facebook.com" target="_blank" rel="noopener noreferrer">
+                    <a href="http://www.facebook.com" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="http://www.instagram.com" target="_blank" rel="noopener noreferrer">
