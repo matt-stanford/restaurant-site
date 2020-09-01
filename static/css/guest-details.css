@@ -23,7 +23,7 @@
     background: #fafafa;
     border: 1px solid #ccc;
     color: #333;
-    cursor: pointer;
+    cursor: text;
     transition: all .2s ease-out;
     -webkit-transition: all .2s ease-out;
     -moz-transition: all .2s ease-out;

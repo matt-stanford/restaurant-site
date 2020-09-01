@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="p-section-2 parallax-window" data-parallax="scroll" data-image-src="{% static 'img/reservation2.png' %}">
+    <div class="container">
+        
+    </div>
+</div>
+
+<div class="section-one section-light">
+    <div class="container">
+        <h1>Booking confirmed</h1>
+    </div>
+    <div class="container">
+        <div class="col-8">
+            <div><p>{{ reservation.first_name }} {{ reservation.last_name }} your reservation has been confirmed!</p></div>
+            <div>
+                <h2>ST815, Oxford</h2>
+                <p>815 Banbury Road, Summertown, Oxford OX2 7HQ</p>
+            </div>
+            <div>
+                <p><strong>Number of diners: </strong>{{ reservation.guests }}</p>
+                <p><strong>Phone: </strong>{{ reservation.phone }}</p>
+                <p><strong>Email: </strong>{{ reservation.email }}</p>
+            </div>
+        </div>
+        <div class="col-4">
+            {{ reservation.date }}
+            <p>{{ reservation.time }}</p>
+            <p>Reference No:</p>
+            <p>ST815{{ reservation.id }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

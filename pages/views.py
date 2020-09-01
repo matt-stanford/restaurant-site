@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+
 from .forms import ContactForm, EnquiryForm, CustomerForm
 from .models import Reservation, Customer, MenuItem
 
@@ -74,5 +75,12 @@ def guest_details(request):
             date=date,
             time=time,
             guests=number_guests)
-        print(reservation)
+        return render(request, 'pages/booking-confirmed.html', {'reservation': reservation})
     return render(request, 'pages/guest-details.html', context)
+
+def booking_confirmed(request, pk):
+    reservation = get_object_or_404(Reservation, pk=pk)
+    context = {
+        'reservation': reservation
+    }
+    return render(request, 'pages/booking-confirmed.html', context)
