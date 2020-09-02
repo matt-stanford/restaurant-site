@@ -10,28 +10,33 @@
 </div>
 
 <div class="section-one section-light">
-    <div class="container">
+    <div class="container mb-4">
         <h1>Booking confirmed</h1>
     </div>
     <div class="container">
         <div class="col-8">
-            <div><p>{{ reservation.first_name }} {{ reservation.last_name }} your reservation has been confirmed!</p></div>
+            <div class="mb-1"><p><strong>{{ reservation.first_name }} {{ reservation.last_name }} your reservation has been confirmed!</strong></p></div>
             <div>
                 <h2>ST815, Oxford</h2>
-                <p>815 Banbury Road, Summertown, Oxford OX2 7HQ</p>
-            </div>
-            <div>
-                <p><strong>Number of diners: </strong>{{ reservation.guests }}</p>
+                <p class="caption">815 Banbury Road, Summertown, Oxford OX2 7HQ</p>
+                <hr>
+                <p><strong>Number of guests: </strong>{{ reservation.guests }}</p>
                 <p><strong>Phone: </strong>{{ reservation.phone }}</p>
                 <p><strong>Email: </strong>{{ reservation.email }}</p>
             </div>
         </div>
         <div class="col-4">
             <div class="reservation-card">
-                {{ reservation.date }}
-                <p>{{ reservation.time }}</p>
-                <p>Reference No:</p>
-                <p>ST815{{ reservation.id }}</p>
+                <div class="card-body">
+                    <h2>{{ reservation.date | date:"d" }}</h2>
+                    <h4>{{ reservation.date | date:"F" }}</h4>
+                    <h4>{{ reservation.date | date:"Y" }}</h4>
+                    <p>{{ reservation.time }}</p>
+                </div>
+                <div class="card-footer">
+                    <p>Reference No:</p>
+                    <p>ST815{{ reservation.id }}</p>
+                </div>
             </div>
         </div>
     </div>

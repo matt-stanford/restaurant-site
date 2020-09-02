@@ -84,4 +84,5 @@ def guest_details(request):
 
 def booking_confirmed(request, form_id):
     reservation = get_object_or_404(Reservation, form_id=form_id)
+    print(reservation.date)
     return render(request, 'pages/booking-confirmed.html', {'reservation': reservation})
