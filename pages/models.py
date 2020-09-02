@@ -55,6 +55,7 @@ class Reservation(models.Model):
     date = models.DateField()
     time = models.TimeField()
     guests = models.PositiveIntegerField()
+    form_id = models.IntegerField(blank=True, null=True)
 
     objects = models.Manager()
 

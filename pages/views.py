@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
+from datetime import datetime
+
 from .forms import ContactForm, EnquiryForm, CustomerForm
 from .models import Reservation, Customer, MenuItem
 
@@ -51,7 +53,6 @@ def booking(request):
 
 def guest_details(request):
     form = CustomerForm(request.POST or None)
-
     date = request.session.get('date', None)
     time = request.session.get('time', None)
     guests = request.session.get('guests', None)
@@ -66,21 +67,21 @@ def guest_details(request):
     if form.is_valid():
         form.save()
         number_guests = int(guests.split(' ')[0])
-
-        reservation = Reservation.objects.create(
+        form_id=form.instance.id
+        
+        Reservation.objects.create(
             first_name=request.POST['first_name'],
             last_name=request.POST['last_name'],
             email=request.POST['email'],
             phone=request.POST['phone'],
             date=date,
             time=time,
-            guests=number_guests)
-        return render(request, 'pages/booking-confirmed.html', {'reservation': reservation})
+            guests=number_guests,
+            form_id=form.instance.id)
+        
+        return redirect('booking_confirmed', form_id=form_id)
     return render(request, 'pages/guest-details.html', context)
 
-def booking_confirmed(request, pk):
-    reservation = get_object_or_404(Reservation, pk=pk)
-    context = {
-        'reservation': reservation
-    }
-    return render(request, 'pages/booking-confirmed.html', context)
+def booking_confirmed(request, form_id):
+    reservation = get_object_or_404(Reservation, form_id=form_id)
+    return render(request, 'pages/booking-confirmed.html', {'reservation': reservation})

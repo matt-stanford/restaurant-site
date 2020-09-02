@@ -27,10 +27,12 @@
             </div>
         </div>
         <div class="col-4">
-            {{ reservation.date }}
-            <p>{{ reservation.time }}</p>
-            <p>Reference No:</p>
-            <p>ST815{{ reservation.id }}</p>
+            <div class="reservation-card">
+                {{ reservation.date }}
+                <p>{{ reservation.time }}</p>
+                <p>Reference No:</p>
+                <p>ST815{{ reservation.id }}</p>
+            </div>
         </div>
     </div>
 </div>
