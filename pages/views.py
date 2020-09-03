@@ -67,7 +67,7 @@ def guest_details(request):
     if form.is_valid():
         form.save()
         number_guests = int(guests.split(' ')[0])
-        form_id=form.instance.id
+        request.session['form_id'] = form.instance.id
         
         Reservation.objects.create(
             first_name=request.POST['first_name'],
@@ -79,10 +79,9 @@ def guest_details(request):
             guests=number_guests,
             form_id=form.instance.id)
         
-        return redirect('booking_confirmed', form_id=form_id)
+        return redirect('booking_confirmed')
     return render(request, 'pages/guest-details.html', context)
 
-def booking_confirmed(request, form_id):
-    reservation = get_object_or_404(Reservation, form_id=form_id)
-    print(reservation.date)
+def booking_confirmed(request):
+    reservation = get_object_or_404(Reservation, form_id=request.session.get('form_id', None))
     return render(request, 'pages/booking-confirmed.html', {'reservation': reservation})

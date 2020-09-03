@@ -7,5 +7,5 @@ urlpatterns = [
     path('menu', views.menu, name='menu'),
     path('booking', views.booking, name='booking'),
     path('guest_details', views.guest_details, name='guest_details'),
-    path('booking_confirmed/<int:form_id>', views.booking_confirmed, name='booking_confirmed'),
+    path('booking_confirmed', views.booking_confirmed, name='booking_confirmed'),
 ]
