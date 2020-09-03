@@ -9,6 +9,17 @@ window.onscroll = function() {
     }
 }
 
+// smooth scroll
+$('#contact-link').on('click', function(e) {
+  e.preventDefault();
+
+  const hash = this.hash;
+
+  $('html, body').animate({
+    scrollTop: $(hash).offset().top
+  }, 800);
+});
+
 // calendar
 
 const date = new Date();
@@ -108,5 +119,3 @@ document.querySelector('.next').addEventListener('click', () => {
 });
 
 renderCalendar()
-
-
