@@ -10,11 +10,8 @@
 </div>
 
 <div class="section-one section-light">
-    <div class="container mb-4">
-        <h1>Booking confirmed</h1>
-    </div>
     <div class="container">
-        <div class="col-8">
+        <div class="col-8 col-left">
             <div class="mb-1"><p><strong>{{ reservation.first_name }} {{ reservation.last_name }} your reservation has been confirmed!</strong></p></div>
             <div>
                 <h2>ST815, Oxford</h2>
@@ -25,7 +22,7 @@
                 <p><strong>Email: </strong>{{ reservation.email }}</p>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-4 col-right">
             <div class="reservation-card">
                 <div class="card-body">
                     <h2>{{ reservation.date | date:"d" }}</h2>

@@ -14,7 +14,7 @@
 }
 
 .guest-info-form input {
-    width: calc(50% - 5px);
+    width: 100%;
     margin-bottom: 10px;
     padding: 11px 16px;
     box-sizing: border-box;
@@ -27,4 +27,10 @@
     transition: all .2s ease-out;
     -webkit-transition: all .2s ease-out;
     -moz-transition: all .2s ease-out;
+}
+
+@media (min-width: 768px) {
+    .guest-info-form input {
+        width: calc(50% - 5px);
+    }
 }

@@ -63,7 +63,7 @@ nav .list-item > a:hover {
 .toggler {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 13;
     cursor: pointer;
     width: 50px;
@@ -74,7 +74,7 @@ nav .list-item > a:hover {
 .hamburger {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 12;
     width: 60px;
     height: 60px;

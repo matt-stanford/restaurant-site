@@ -52,6 +52,7 @@ h2 + hr,
     height: 3px;
     margin: 20px 0;
     background: #333;
+    border: none;
 }
 
 .caption {
@@ -107,7 +108,7 @@ a {
 }
 
 .btn-form {
-    width: 24%;
+    width: 100%;
 }
 
 .btn-primary,
@@ -133,6 +134,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     width: 100%;
     max-width: 1160px;
     padding: 0 15px;
@@ -191,7 +193,9 @@ footer {
     width: 100%;
     height: auto;
     padding: 33px 60px;
-    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .showcase-socials i {
@@ -220,10 +224,6 @@ footer {
     background: #333;
     border-color: #333;
 }
-
-/* .showcase-socials .fa-envelope {
-    scroll-behavior: smooth;
-} */
 
 .section-light {
     background: #fff;
@@ -254,6 +254,23 @@ footer {
     max-width: 100%;
 }
 
+.col-6 img {
+    width: 100%;
+}
+
+.col-right {
+    padding-left: 0;
+}
+
+.col-left {
+    padding-right: 0;
+    padding-bottom: 2rem;
+}
+
+.col-left-text {
+    text-align: left;
+}
+
 /* spacing */
 
 .mb-1 {
@@ -270,14 +287,6 @@ footer {
 
 .mt-2 {
     margin-top: 2rem;
-}
-
-.pl-2 {
-    padding-left: 2rem;
-}
-
-.pr-2 {
-    padding-right: 2rem;
 }
 
 .h-100 {
@@ -335,5 +344,26 @@ footer {
     .col-4 {
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
+    }
+
+    .col-right {
+        padding-left: 2rem;
+    }
+    
+    .col-left {
+        padding-right: 2rem;
+        padding-bottom: 0;
+    }
+
+    .col-left-text {
+        text-align: right;
+    }
+
+    .showcase-socials {
+        justify-content: flex-end;
+    }
+
+    .btn-form {
+        width: 24%;
     }
 }

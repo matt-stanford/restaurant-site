@@ -19,10 +19,10 @@
 
     <div class="section-light">
         <div class="container">
-            <div class="col-6 pr-2">
+            <div class="col-6 col-left">
                 <img src="{% static 'img/section2-image.png' %}" alt="">
             </div>
-            <div class="col-6 pl-2">
+            <div class="col-6 col-right">
                 <h2>Our story</h2>
                 <hr>
                 <p class="mb-2">ST815 is our brand new casual-dining neighbourhood restaurant offering Lunch and Dinner from Wednesday to Saturday plus Sunday Lunch. In case you were wondering, the ST815 team will be conjuring up magical new menu ideas every Monday and Tuesday to be enjoyed for the rest of the week, as well as the odd bit of R&R!</p>
@@ -39,14 +39,14 @@
 
     <div class="section-light">
         <div class="container">
-            <div class="col-6 pr-2 text-right">
+            <div class="col-6 col-left col-left-text">
                 <h2>Restaurant</h2>
                 <hr>
                 <p class="mb-2">Our aim at ST815 is to provide great value menus where food is all about seasonality and great ingredients. Paul heads up our award-winning team, bringing you dishes that will wow you!</p>
                 <p class="mb-2">Our menus offer a set two or three course selection, providing great taste and great value starting at just £35. Our menus change frequently so we can use the freshest of ingredients and keep things seasonal and local.</p>
                 <a href="" class="btn btn-primary">View the menu</a>
             </div>
-            <div class="col-6 pl-2">
+            <div class="col-6 col-right">
                 <img src="{% static 'img/section4-image.png' %}" alt="">
             </div>
         </div>
@@ -60,7 +60,7 @@
 
     <div class="section-light">
         <div class="container">
-            <div class="col-6 pr-2">
+            <div class="col-6 col-left">
                 {% for main in sample_menu_one %}
                     <div class="menu-item">
                         <p class="menu-item-name">{{ main.name }}</p>
@@ -73,7 +73,7 @@
                     </div>
                 {% endfor %}
             </div>
-            <div class="col-6 pl-2">
+            <div class="col-6 col-right">
                 {% for main in sample_menu_two %}
                     <div class="menu-item">
                         <p class="menu-item-name">{{ main.name }}</p>
@@ -94,7 +94,7 @@
 
     <div class="contact-form" id="contact" name="contact">
         <div class="container">
-            <div class="col-6 pr-2">
+            <div class="col-6 col-left">
                 <div class="footer-logo">
                     <img src="{% static 'img/815_logo_dark.png' %}" alt="">
                 </div>
@@ -114,7 +114,7 @@
                     <p>Oxford OX2 7HQ.</p>
                 </div>
             </div>
-            <div class="col-6 pl-2">
+            <div class="col-6 col-right">
                 <h4><i class="fas fa-envelope"></i> Send a message</h4>
                 <form method="post">
                     {% csrf_token %}
